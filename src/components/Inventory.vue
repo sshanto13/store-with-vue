@@ -6,14 +6,19 @@
                     <div class="card-body">
                         <h5 class="card-title"> {{item.title}}</h5>
                         <p class="card-text">{{item.price}}</p>
-                        <a href="#" class="btn btn-primary"> Add to cart</a>
+                        <a @click="addToCart(item)" class="btn btn-primary"> Add to cart</a>
                     </div>
                 </div>
           </div>
 </template>
 <script>
 export default {
- props: ['items']
+ props: ['items'],
+ methods:{
+     addToCart(item){
+        this.$emit('newItemAdded', item);
+     }
+ }
 }
 
 </script>
