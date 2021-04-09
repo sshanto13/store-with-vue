@@ -1,15 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+//import Hello from '../components/views/Hello'
+import ItemDetails from '../components/views/ItemDetails'
+import Inventory from '../components/views/Inventory'
+export const routes =[
+   {
+     path: '',
+     component : Inventory
+   },
+   {
+    path: '/item/:id',
+    component : ItemDetails
+   }
 
-Vue.use(Router)
+]
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
-})
+

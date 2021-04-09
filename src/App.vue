@@ -1,11 +1,18 @@
 <template>
   <div id="app">
+<!-- <router-link :to="{'path': '/'}"> Home </router-link>
+<router-link :to="{'path': '/suman/1'}"> Suman 1 </router-link>
+<router-link :to="{'path': '/suman/2'}"> Suman 2</router-link>
+<router-link :to="{'path': '/suman/3'}"> Suman 3</router-link>
+<router-link :to="{'path': '/suman/4'}"> Suman 4</router-link>
+<router-view></router-view> -->
    <Navbar @search="search"> </Navbar>
    <div class="container">
      <div class="row">
        <div class="col-md-9">
-            <h2>Store</h2>           
-            <Inventory @newItemAdded="addCartItem" :items="items"></Inventory>
+            <h2>Store</h2>  
+            <router-view></router-view>         
+            <!-- <Inventory @newItemAdded="addCartItem" :items="items"></Inventory> -->
        </div>
         <div class="col-md-3">
            <h2>Cart</h2>
@@ -20,13 +27,13 @@
 <script>
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
-import Inventory from './components/Inventory' 
+// import Inventory from './components/views/Inventory' 
 import data from './data.js' 
 export default {
    components:{
      Navbar,
-     Cart,
-     Inventory
+     Cart
+    //  Inventory
    },
    data(){
      return{
